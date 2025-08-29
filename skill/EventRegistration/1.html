@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button><button>按钮</button>
+    </div>
+
+    <script>
+        // 思路1：事件委托的做法
+        // var container = document.querySelector('.container');
+
+        // container.onclick = function (e) {
+        //     if (e.target.tagName === 'BUTTON') {
+        //         var arr = Array.prototype.slice.call(container.children)
+        //         var index = arr.indexOf(e.target)
+        //         console.log(index)
+        //     }
+        // }
+
+
+        // 思路2： 循环注册
+        var btns = document.querySelectorAll('BUTTON') 
+
+        for(var i=0;i<btns.length;i++){
+            (function(i){
+                btns[i].onclick = function(e){
+                    console.log("我是第",i+1,"个按钮")
+                }
+            })(i)
+        }
+
+
+    </script>
+</body>
+
+</html>

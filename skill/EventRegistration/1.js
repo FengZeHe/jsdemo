@@ -1,7 +1,7 @@
 for (var i = 0; i < 3; i++) {
-    (function (a) {
+    (function (i) {
         setTimeout(function () {
-            console.log(a)
+            console.log(i)
         }, 1000)
     })(i)
 }
