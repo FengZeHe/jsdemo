@@ -17,23 +17,40 @@ var str =
 // console.log(res)
 
 // 得到下面字符串中第一个i和最后一个i之间的子串
-var iarr = [];
-for (var k = 0; k < str.length; k++) {
-    if (str[k] === 'i') {
-        iarr.push(k)
-    }
-}
-var istr = str.slice(iarr[0], iarr[iarr.length])
+// var iarr = [];
+// for (var k = 0; k < str.length; k++) {
+//     if (str[k] === 'i') {
+//         iarr.push(k)
+//     }
+// }
+// var istr = str.slice(iarr[0], iarr[iarr.length])
 // console.log(istr)
 
 // 将下面的rgb格式转换成为HEX格式
-var rgb = 'rgb(253, 183, 25)';
+// var rgb = 'rgb(253, 183, 25)';
 
-var rgbv = rgb.match(/\d+/g);
-function toHex(num) {
-    var hex = parseInt(num, 10).toString(16);
-    return hex.length === 1 ? '0' + hex : hex;
-}
+// var rgbv = rgb.match(/\d+/g);
+// function toHex(num) {
+//     var hex = parseInt(num, 10).toString(16);
+//     return hex.length === 1 ? '0' + hex : hex;
+// }
 
-var hex = '#' + toHex(rgbv[0]) + toHex(rgbv[1]) + toHex(rgbv[2]);
-console.log(hex);
+// var hex = '#' + toHex(rgbv[0]) + toHex(rgbv[1]) + toHex(rgbv[2]);
+// console.log(hex);
+
+
+// name转换成驼峰命名
+var name = 'has own property'; // --> hasOwnProperty
+
+var words = name.split(' ');
+
+var camelCaseName = words.reduce((result, word, index) => {
+    if (index === 0) {
+        return result + word;
+    } else {
+        return result + word.charAt(0).toUpperCase() + word.slice(1);
+    }
+}, '');
+
+console.log(camelCaseName)
+
