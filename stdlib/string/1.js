@@ -41,14 +41,13 @@ var str =
 
 // name转换成驼峰命名
 var name = 'has own property'; // --> hasOwnProperty
-
 var words = name.split(' ');
 
 var camelCaseName = words.reduce((result, word, index) => {
     if (index === 0) {
         return result + word;
     } else {
-        return result + word.charAt(0).toUpperCase() + word.slice(1);
+        return result + word.charAt(0).toUpperCase() + word.slice(1); //取单词从索引 1 开始到结尾的部分
     }
 }, '');
 
