@@ -7,3 +7,18 @@ const user = {
   sex: 'female',
 };
 
+
+Object.entries(user).forEach(function ([key, value]) {
+  Object.defineProperty(user, key, {
+    get() {
+      console.log(`正在读取${key},值为${value}`)
+      return value;
+    },
+    set(val) {
+      console.log(`设置${key},新的值是${val}`);
+      value = val;
+    }
+  })
+})
+
+user.age = user.age + 10;
