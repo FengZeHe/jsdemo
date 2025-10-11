@@ -497,30 +497,25 @@ const students = [
 
 // 得到所有女生的姓名和电话号码 [ {name:'monica', tel:'18122223333'} ]
 
-// const fmInfoGroup = students.filter((stu) => {
-//   return stu.sex === '女';
-// }).map((stu) => {
-//   const name = stu.name;
-//   const tel = stu.tel;
-//   const obj = {
-//     name,
-//     tel
-//   }
-//   return {
-//     ...obj
-//   }
-// });
+const fmInfoGroup = students.filter((stu) => {
+  return stu.sex === '女';
+}).map((stu) => {
+  return {
+    name: stu.name,
+    tel: stu.tel
+  }
+});
 
-// console.log(fmInfoGroup)
+console.log(fmInfoGroup)
 
 
 // 将每个学生变为一个 li 元素字符串，元素内容为学生姓名，拼接所有元素，形成一个长字符串 <li>张三</li><li>李四</li>...\
-let stuStr = ``;
-const stuList = students.map((stu) => {
-  return stu.name;
-}).map((stu) => {
-  const temp = `<li>${stu}</li>`;
-  stuStr += temp;
-})
+// let stuStr = ``;
+// const stuList = students.map((stu) => {
+//   return stu.name;
+// }).map((stu) => {
+//   const temp = `<li>${stu}</li>`;
+//   stuStr += temp;
+// })
 
-console.log(stuStr)
+// console.log(stuStr)

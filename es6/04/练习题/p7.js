@@ -3,6 +3,16 @@
  */
 
 // 根据下面的调用方式，编写debounce函数
+const debounce = (fn, duration = 1000) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, duration);
+  };
+};
+
 
 const fn = (a, b) => {
   console.log(a + b);

@@ -1,6 +1,9 @@
 // 根据下面的调用示例，完成函数 getDatas
 
-getDatas(); // 输出：获取第1页的数据，每页显示10条，查询关键字为空
+const getDatas = ({ page = 1, limit = 10, keyword = '' } = {}) => {
+  console.log(page, limit, keyword)
+};
+// 输出：获取第1页的数据，每页显示10条，查询关键字为空
 
 getDatas({
   page: 2,
