@@ -35,13 +35,23 @@ const promList = new Array(10).fill(0).map((_, index) => fetchStudents(index + 1
 
 // 获取1-10页的学生，最终按照页码的顺序合并成一个数组，如果某些页码的数据获取失败，就不加入该数据即可
 
-Promise.allSettled(promList).then((result) => {
-  result = result.
-    filter((r) => { return r.status === 'fulfilled' }).map((it) => it.value).flat();
-  console.log(result)
-})
+// Promise.allSettled(promList).then((result) => {
+//   result = result.
+//     filter((r) => { return r.status === 'fulfilled' }).map((it) => it.value).flat();
+//   console.log(result)
+// })
 
 // 获取1-10页的学生，打印最先获取到的数据，如果全部都获取失败，则打印所有的错误消息
+// Promise.any(promList).then((res) => {
+//   console.log(res)
+// }).catch((err) => {
+//   console.log(err)
+// });
+
 
 // 获取1-10页的学生，输出最先得到的结果（有结果输出结果，有错误输出错误）
-
+Promise.race(promList).then((res) => {
+  console.log(res);
+}).catch((err) => {
+  console.log(err)
+})
